@@ -19,16 +19,28 @@
 
         <div class=w3-padding-large></div>
 
+        <div class="w3-panel w3-red">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+
         <main class="w3-container">
         
             {% block main %}{% endblock %}
             
         </main>
 
-        <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-large">
             <a href="https://www.twitter.com/barthk12"><i class="fa fa-twitter w3-hover-opacity"></i></a>
             <p class="w3-medium">Data Provided courtesy of Oxford Pet Dataset</p>
-            <p class="w3-medium">Help me pay for this server? <a href="https://paypal.me/BartHeerkens"><i class="fa fa-paypal w3-hover-opacity"></i> Me</a></p>
+            <p class="w3-medium">Buy me coffee? <a href="https://paypal.me/BartHeerkens"><i class="fa fa-paypal w3-hover-opacity"></i> Me</a></p>
         </footer>
     </body>
 </html>
